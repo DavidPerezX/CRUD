@@ -1,0 +1,36 @@
+<div class="container pt-4">
+    <div class="row">
+        <div class="col-lg-6 offset-lg-3 text-center">
+            <div class="card text-center">
+                <div class="card-body">
+                    <h3>{{ titulo }}
+                        <div *ngIf="loading" class="spinner-border text-info float-right" role="status">
+                            <span class="sr-only">Loading...</span>
+                        </div>
+                    </h3>
+                    <span *ngIf="submitted && crearEmpleado.invalid " class="badge badge-danger">Es necesario llenar todos los campos</span>
+                    <form class="mt-4" [formGroup]="crearEmpleado"(ngSubmit)="agregarEditarEmpleado()">
+                        <div class="row">
+                            <div class="col">
+                                <input type="text" class="form-control form-control-lg text-center" 
+                                formControlName="nombre" placeholder="Nombre">
+                            </div>
+                            <div class="col">
+                                <input type="text" class="form-control form-control-lg text-center"
+                                formControlName="apellido" placeholder="Apellido">
+                            </div>
+                        </div>
+                        <input type="text" class="form-control input form-control-lg text-center mt-3"
+                        formControlName="documento" placeholder="RFC">
+                        <input type="number" min="0" class="form-control input form-control-lg text-center mt-3"
+                        formControlName="salario" placeholder="Salario">
+                        <div class="mt-3">
+                            <button type="text" class="btn btn-secondary btn-lg mr-3"routerLink="/list-employees">Regresar</button>
+                            <button type="submit" class="btn btn-success btn-lg">Agregar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

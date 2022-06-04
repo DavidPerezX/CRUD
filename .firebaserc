@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "empleados-4ea83": {
+      "hosting": {
+        "CRUD": [
+          "empleados-4ea83"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "empleados-4ea83"
+  }
+}
